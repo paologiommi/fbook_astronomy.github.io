@@ -1,0 +1,960 @@
+<HTML style="background-color:#ffffff">
+<style>
+/* Tooltip code */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}     
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  left: 105%;
+  padding: 5px 0;
+        
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+} 
+  
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+    body {
+      font-family: sans-serif;
+      padding: 50px;
+      background: #f4f4f4;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-button {
+      padding: 6px 16px;
+      font-size: 14px;
+      background: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dropdown-button:hover {
+      background: #f0f0f0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      background: #ffffff;
+      min-width: 160px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background: #f2f2f2;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  label {
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-right: 8px;
+    color: #333;
+  }
+
+  select {
+    font-family: sans-serif;
+    padding: 8px 12px;
+    border-radius: 6px 10px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: pointer;
+    appearance: none;         /* Removes OS styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: border 0.2s ease;
+  }
+  select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+  }
+sm {
+  font-size: 10px;
+ }
+smbig {
+  font-size: 12px;
+ }
+.title {
+  font-size: 13px;
+ }
+body {
+ font-family: Tahoma, sans-serif;
+ margin:0;
+ padding:0;
+}
+#custom-logo {
+    position: relative;
+    top: 3px;
+    left: 1px; 
+    width: 180px;      /* Fixed width */
+    height: auto;      /* Maintains aspect ratio */
+    max-width: 100%;   /* Prevents overflow in smaller containers */
+    z-index: 1000;
+    display: block;    /* Ensures predictable layout */
+}
+#custom-logo1 {
+   position: relative;
+   top: 2px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo2 {
+   position: relative;
+   top: 5px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo3 {
+   position: relative;
+   top: 5px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo4 {
+   position: relative;
+   top: 5px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo5 {
+   position: relative;
+   top: 3px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo6 {
+   position: relative;
+   top: 3px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo7 {
+   position: relative;
+   top: 3px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo8 {
+   position: relative;
+   top: 3px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    
+}
+#custom-logo9 {
+   position: relative;
+   top: 3px;
+   left: 5%;
+   width: 180px;
+   height: auto;
+   z-index: 1000;
+   display: block;    /* Ensures predictable layout */
+
+}
+.title-button {
+  background-color: #cc4400;
+  color: #fff;  /* text color (optional) */
+  padding: 10px 20px;
+  font-size: 18px;
+  border: 2px solid #cc4400;         /* red border */
+  border-radius: 9px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}   
+.donate-button {
+ //background-color: #02a95c;
+ background-color: #cc4400;
+ color: white;
+ padding: 12px 28px;
+ font-size: 18px;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+ text-decoration: none;
+}
+.donate-button:hover {
+// background-color: #02924e;
+ background-color: #cc0066;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+ transform: scale(1.05);
+ transition: all 0.2s ease;
+ }
+.chapter-button {
+ background-color: #e67300;
+ color: white;
+ padding: 16px 12px;
+ font-size: 14px;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+ text-decoration: none;
+ outline: none;
+ display: inline-block;
+ margin-bottom: 8px;
+}
+.chapter-button span {
+  font-size: inherit;
+}
+.chapter-button:hover {
+ background-color: #ff6633;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+ transform: scale(1.05);
+ transition: all 0.5s ease;
+ }
+.chapter-button:active {
+  transform: scale(0.96) translateY(5px);
+  box-shadow: inset 0 5px 8px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.3);
+  background-color: #cc5c00;
+  transition: all 0.5s ease;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Hidden state for fading out */
+.modal.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-content {
+      background: white;
+      padding: 0;
+      border-radius: 8px;
+      width: 90%;
+      height: 90%;
+      max-width: 1000px;
+      max-height: 600px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+}
+.close-btn {
+      align-self: flex-end;
+      cursor: pointer;
+      font-size: 24px;
+      margin: 10px;
+}
+.close-btn1 {
+      align-self: flex-end;
+      cursor: pointer;
+      font-size: 24px;
+      margin: 10px;
+}
+.close-btn3 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-btn4 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-btn5 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-btn6 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-btn7 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-btn8 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-btn9 {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+.close-Donate {
+     align-self: flex-end;
+     cursor: pointer;
+     font-size: 24px;
+     margin: 10px;
+}
+iframe {
+      flex: 1;
+      border: none;
+      border-radius: 0 0 8px 8px;
+}
+body {
+   font-family: 'Helvetica', sans-serif;
+}
+</style>
+<HEAD>
+<!--script>const ROOT_URL = "http://localhost:8080";</script-->
+<script>
+      const ROOT_URL = window.location.hostname.includes("localhost")
+        ? "http://localhost:8080"
+        : "https://firmamento.nyuad.nyu.edu";
+</script>
+
+  <meta charset="UTF-8">
+  <title>F-book on astronomy</title>
+  <link rel="icon" type="image/x-icon" href = `${ROOT_URL}/logo/fbook_logo.png`>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</HEAD>
+<table border=0><tr valign="top"><td id="bg-cell" style="background-image: url(`${ROOT_URL}/logo/FirmamentoSky-logo.png`); background-size: cover; background-position: center;">
+<!--table border=0><tr valign="top"><td style="background-image: url(`${ROOT_URL}/logo/firmamento_AI_logo.png`); background-size: 800px; background-position: center; background-repeat: no-repeat; background-color:#efefe6aa"i-->
+<div id="fbook" style="width:80vw; height:90vh;">
+  <div id="al"></div>
+  <!--a href="https://firmamento.nyuad.nyu.edu" target="_blank" rel="noopener noreferrer">
+  <img
+    src = `${ROOT_URL}/logo/firmamento_AI_logo.png`
+    id="custom-logo"
+    alt="Firmamento logo"
+    title="Firmamento logo">
+   </a!-->
+</div>
+</td><td style="background-color: #fff5e6"><sm> <div style="width:18vw; text-align: left;">
+<h1>
+  <center>
+    <a id="custom-logo0" class="title-button">
+      <span style="margin-right: 35px; margin-top: 125px; display: inline-block;">☰ Chapters</span>
+    </a>
+  </center>
+</h1>
+<br>
+<a id="custom-logo1" class="chapter-button">- Foreword -</a>
+<!-- Modal -->
+<div id="myModal1" class="modal">
+  <div class="modal-content">
+    <span class="close-btn1">&times;</span>
+    <iframe id="forewordFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo2" class="chapter-button"><span style="margin-right: 35px;">1-Astronomical sources</span></a>
+<!-- Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <iframe id="surveyFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo3" class="chapter-button"><span style="margin-right: 65px;">2-The solar system</span></a>
+<div id="myModal3" class="modal">
+  <div class="modal-content">
+    <span class="close-btn3">&times;</span>
+  <iframe id="questionsFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo4" class="chapter-button"><span style="margin-right: 40px;">3-Cosmic backgrounds</span></a>
+<div id="myModal4" class="modal">
+  <div class="modal-content">
+    <span class="close-btn4">&times;</span>
+  <iframe id="backgroundsFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo5" class="chapter-button"><span style="margin-right: 100px;">4-Cosmology</span></a>
+<div id="myModal5" class="modal">
+  <div class="modal-content">
+    <span class="close-btn5">&times;</span>
+  <iframe id="cosmologyFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo6" class="chapter-button"><span style="margin-right: 30px;">5-Emission mechanisms</span></a>
+<div id="myModal6" class="modal">
+  <div class="modal-content">
+    <span class="close-btn6">&times;</span>
+  <iframe id="emissionFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo7" class="chapter-button"><span style="margin-right: 100px;">6-Exoplanets</span></a>
+<div id="myModal7" class="modal">
+  <div class="modal-content">
+    <span class="close-btn7">&times;</span>
+  <iframe id="exoFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo8" class="chapter-button"><span style="margin-right: 105px;">7-Dark skies</span></a>
+<div id="myModal8" class="modal">
+  <div class="modal-content">
+    <span class="close-btn8">&times;</span>
+  <iframe id="darkFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<a id="custom-logo9" class="chapter-button"><span style="margin-right: 5px;">8-Multi-messenger astronomy</span></a>
+<div id="myModal9" class="modal">
+  <div class="modal-content">
+    <span class="close-btn9">&times;</span>
+  <iframe id="multimessengerFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+<div style="margin-top: 60px;"><center><a id="custom-Donate" class="donate-button">Donate</div></a></center>
+<div id="myModalDonate" class="modal">
+  <div class="modal-content">
+    <span class="close-Donate">&times;</span>
+    <iframe id="DonateFrame" src="" allow="microphone; autoplay"></iframe>
+  </div>
+</div>
+</div></sm>
+</td></tr><tr><td colspan="2" align="left" style="background-color: #fff5e6">
+<div style="margin-bottom: 40px;">
+<strong>⚙️ Settings: &nbsp;</strong>
+  <div class="dropdown">
+    <button class="dropdown-button" id="dropdowncw-language" onclick="closeAllModals()">Language</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="selectLanguage('Arabic')">Arabic</a>
+      <a href="#" onclick="selectLanguage('Armenian')">Armenian</a>
+      <a href="#" onclick="selectLanguage('Chinese')">Chinese</a>
+      <a href="#" onclick="selectLanguage('English')">English</a>
+      <a href="#" onclick="selectLanguage('French')">French</a>
+      <a href="#" onclick="selectLanguage('German')">German</a>
+      <a href="#" onclick="selectLanguage('Italian')">Italian</a>
+      <a href="#" onclick="selectLanguage('Japanese')">Japanese</a>
+      <a href="#" onclick="selectLanguage('Portuguese')">Portuguese</a>
+      <a href="#" onclick="selectLanguage('Russian')">Russian</a>
+      <a href="#" onclick="selectLanguage('Spanish')">Spanish</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropdown-button" id="dropdowncw-response" onclick="closeAllModals()">Response type</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="selectResponse('for children')">For children</a>
+      <a href="#" onclick="selectResponse('basic')">Basic level</a>
+      <a href="#" onclick="selectResponse('high school students')">High school students</a>
+      <a href="#" onclick="selectResponse('advanced')">Technical/Advanced</a>
+      <a href="#" onclick="selectResponse('for teachers')">For teachers</a>
+    </div>
+  </div>
+<div class="tooltip">
+<span class="tooltiptext">YouTube demo
+<a href="https://youtu.be/skQj_jdheAM" target="_blank"></span>
+  <i class="fab fa-youtube" style="font-size: 32px; color: red;"></i>
+</a>
+</div>
+</div>
+</td></tr>
+</table>
+<script>
+let selectedLanguage = "English"; // default value
+
+function selectLanguage(lang) {
+  selectedLanguage = lang;
+  document.getElementById('dropdowncw-language').textContent = lang;
+  updateChapterLabels();
+}
+
+let selectedResponseLevel = "basic"; // default value
+function selectResponse(resp) {
+   selectedResponseLevel = resp;
+   document.getElementById('dropdowncw-response').textContent = resp;
+
+}
+function closeAllModals() {
+  const modals = document.querySelectorAll(".modal");
+  modals.forEach(modal => {
+    modal.style.display = "none";
+    const iframe = modal.querySelector("iframe");
+    if (iframe) iframe.src = "";
+  });
+}
+
+//  a button
+ const modal = document.getElementById("myModal");
+ const iframe = document.getElementById("surveyFrame");
+ const imageButton = document.getElementById("custom-logo2");
+ // Click on image triggers the modal
+ imageButton.addEventListener("click", function() {
+  closeAllModals();
+   iframe.src = `${ROOT_URL}/Fbook/firmamento-ai-AstronomicalQuestions.html?lang=` + 
+              selectedLanguage + 
+              "&level=" + 
+              selectedResponseLevel;
+   modal.style.display = "flex";
+ }); 
+ // Close button in modal
+ document.querySelector(".close-btn").addEventListener("click", function() {
+   iframe.src = "";
+   modal.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal1 = document.getElementById("myModal1");
+ const iframe1 = document.getElementById("forewordFrame");
+ const imageButton1= document.getElementById("custom-logo1");
+ imageButton1.addEventListener("click", function() {
+  closeAllModals();
+   iframe1.src = `${ROOT_URL}/Fbook/foreword.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal1.style.display = "flex";
+ });
+ // Close button in modal
+ document.querySelector(".close-btn1").addEventListener("click", function() {
+   iframe1.src = "";
+   modal1.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal1").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe1.src = "";
+     this.style.display = "none";
+   }
+ });
+
+//  another button
+ const modal3 = document.getElementById("myModal3");
+ const iframe3 = document.getElementById("questionsFrame");
+ const imageButton3 = document.getElementById("custom-logo3");
+ imageButton3.addEventListener("click", function() {
+  closeAllModals();
+   iframe3.src = `${ROOT_URL}/Fbook/firmamento-ai-SolarSystem.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal3.style.display = "flex";
+ }); 
+ // Close button in modal
+ document.querySelector(".close-btn3").addEventListener("click", function() {
+   iframe3.src = "";
+   modal3.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal3").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe3.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal4 = document.getElementById("myModal4");
+ const iframe4 = document.getElementById("backgroundsFrame");
+ const imageButton4 = document.getElementById("custom-logo4");
+ imageButton4.addEventListener("click", function() {
+  closeAllModals();
+   iframe4.src = `${ROOT_URL}/Fbook/firmamento-ai-CosmicBackgrounds.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal4.style.display = "flex";
+ }); 
+ // Close button in modal
+ document.querySelector(".close-btn4").addEventListener("click", function() {
+   iframe4.src = "";
+   modal4.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal4").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe4.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal5 = document.getElementById("myModal5");
+ const iframe5 = document.getElementById("cosmologyFrame");
+ const imageButton5 = document.getElementById("custom-logo5");
+ imageButton5.addEventListener("click", function() {
+  closeAllModals();
+   iframe5.src = `${ROOT_URL}/Fbook/firmamento-ai-Cosmology.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal5.style.display = "flex";
+ });
+ // Close button in modal
+ document.querySelector(".close-btn5").addEventListener("click", function() {
+   iframe5.src = "";
+   modal5.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal5").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe5.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal6 = document.getElementById("myModal6");
+ const iframe6 = document.getElementById("emissionFrame");
+ const imageButton6 = document.getElementById("custom-logo6");
+ imageButton6.addEventListener("click", function() {
+  closeAllModals();
+   iframe6.src = `${ROOT_URL}/Fbook/firmamento-ai-AstroEmissionMechanisms.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal6.style.display = "flex";
+ });
+ // Close button in modal
+ document.querySelector(".close-btn6").addEventListener("click", function() {
+   iframe6.src = "";
+   modal6.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal6").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe6.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal7 = document.getElementById("myModal7");
+ const iframe7 = document.getElementById("exoFrame");
+ const imageButton7 = document.getElementById("custom-logo7");
+ imageButton7.addEventListener("click", function() {
+  closeAllModals();
+   iframe7.src = `${ROOT_URL}/Fbook/firmamento-ai-Exoplanets.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal7.style.display = "flex";
+ });
+ // Close button in modal
+ document.querySelector(".close-btn7").addEventListener("click", function() {
+   iframe7.src = "";
+   modal7.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal7").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe7.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal8 = document.getElementById("myModal8");
+ const iframe8 = document.getElementById("darkFrame");
+ const imageButton8 = document.getElementById("custom-logo8");
+ imageButton8.addEventListener("click", function() {
+  closeAllModals();
+   iframe8.src = `${ROOT_URL}/Fbook/firmamento-ai-DarkSkies.html?lang=`+
+              selectedLanguage + 
+              "&level=" + 
+              selectedResponseLevel;
+   modal8.style.display = "flex";
+ });
+ // Close button in modal
+ document.querySelector(".close-btn8").addEventListener("click", function() {
+   iframe8.src = "";
+   modal8.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal8").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe8.src = "";
+     this.style.display = "none";
+   }
+ });
+//  another button
+ const modal9 = document.getElementById("myModal9");
+ const iframe9 = document.getElementById("multimessengerFrame");
+ const imageButton9 = document.getElementById("custom-logo9");
+ imageButton9.addEventListener("click", function() {
+  closeAllModals();
+   iframe9.src = `${ROOT_URL}/Fbook/firmamento-ai-Multimessenger.html?lang=` +
+              selectedLanguage +
+              "&level=" +
+              selectedResponseLevel;
+   modal9.style.display = "flex";
+ });
+ // Close button in modal
+ document.querySelector(".close-btn9").addEventListener("click", function() {
+   iframe9.src = "";
+   modal9.style.display = "none";
+ });
+ // Close modal by clicking outside modal content
+ document.getElementById("myModal9").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframe9.src = "";
+     this.style.display = "none";
+   }
+ });
+//  Donate button
+ const modalDonate = document.getElementById("myModalDonate");
+ const iframeDonate = document.getElementById("DonateFrame");
+ const imageButtonDonate = document.getElementById("custom-Donate");
+ imageButtonDonate.addEventListener("click", function() {
+  closeAllModals();
+   iframeDonate.src = `${ROOT_URL}/Fbook/Donate.html?lang=`+selectedLanguage;
+   modalDonate.style.display = "flex";
+ });
+// Close button in modal
+ document.querySelector(".close-Donate").addEventListener("click", function() {
+   iframeDonate.src = "";
+   modalDonate.style.display = "none";
+ });
+// Close modal by clicking outside modal content
+ document.getElementById("myModalDonate").addEventListener("click", function(e) {
+   if (e.target === this) {
+     iframeDonate.src = "";
+     this.style.display = "none";
+   }
+ });
+//translate to selected language
+    const translations = {
+      English: {
+        chapters: "☰ Chapters",
+        donate: "Donate",
+        chapterNames: [
+          " -   Foreword   -",
+          "1-Astronomical sources",
+          "2-The solar system",
+          "3-Cosmic backgrounds",
+          "4-Cosmology",
+          "5-Emission mechanisms",
+          "6-Exoplanets",
+          "7-Dark skies",
+          "8-Multi-messenger astronomy"
+        ]
+      },
+      French: {
+        chapters: "☰ Chapitres",
+        donate: "Faire un don",
+        chapterNames: [
+          " -Préface",
+          "1-Sources astronomiques",
+          "2-Le système solaire",
+          "3-Fonds cosmiques",
+          "4-Cosmologie",
+          "5-Mécanismes d'émission",
+          "6-Exoplanètes",
+          "7-Ciels sombres",
+          "8-Astronomie multi-messagers"
+        ]
+      },
+      Spanish: {
+        chapters: "☰ Capítulos",
+        donate: "Donar",
+        chapterNames: [
+          " -Prólogo",
+          "1-Fuentes astronómicas",
+          "2-El sistema solar",
+          "3-Fondos cósmicos",
+          "4-Cosmología",
+          "5-Mecanismos de emisión",
+          "6-Exoplanetas",
+          "7-Cielos oscuros",
+          "8-Astronomía multimensajero"
+        ]
+      },
+      German: {
+        chapters: "☰ Kapitel",
+        donate: "Spenden",
+        chapterNames: [
+          " -Vorwort",
+          "1-Astronomische Quellen",
+          "2-Das Sonnensystem",
+          "3-Kosmische Hintergründe",
+          "4-Kosmologie",
+          "5-Emissionsmechanismen",
+          "6-Exoplaneten",
+          "7-Dunkle Himmel",
+          "8-Multibotenastronomie"
+        ]
+      },
+      Italian: {
+        chapters: "☰ Capitoli",
+        donate: "Dona",
+        chapterNames: [
+          " -Prefazione",
+          "1-Sorgenti astronomiche",
+          "2-Il sistema solare",
+          "3-Fondi cosmici",
+          "4-Cosmologia",
+          "5-Meccanismi di emissione",
+          "6-Esopianeti",
+          "7-Cieli bui",
+          "8-Astronomia multi-messaggera"
+        ]
+      },
+      Japanese: {
+        chapters: "☰ 章",
+        donate: "寄付する",
+        chapterNames: [
+          " -はじめに",
+          "1-天文の情報源",
+          "2-太陽系",
+          "3-宇宙背景",
+          "4-宇宙論",
+          "5-放射メカニズム",
+          "6-系外惑星",
+          "7-暗い空",
+          "8-マルチメッセンジャー天文学"
+        ]
+      },
+      Chinese: {
+        chapters: "☰ 章节",
+        donate: "捐赠",
+        chapterNames: [
+          " -前言",
+          "1-天文源",
+          "2-太阳系",
+          "3-宇宙背景",
+          "4-宇宙学",
+          "5-发射机制",
+          "6-系外行星",
+          "7-黑暗天空",
+          "8-多信使天文学"
+        ]
+      },
+      Portuguese: {
+        chapters: "☰ Capítulos",
+        donate: "Doar",
+        chapterNames: [
+          " -Prefácio",
+          "1-Fontes astronômicas",
+          "2-O sistema solar",
+          "3-Fundos cósmicos",
+          "4-Cosmologia",
+          "5-Mecanismos de emissão",
+          "6-Exoplanetas",
+          "7-Céus escuros",
+          "8-Astronomia multimensageira"
+        ]
+      },
+      Russian: {
+        chapters: "☰ Главы",
+        donate: "Пожертвовать",
+        chapterNames: [
+          " -Предисловие",
+          "1-Астрономические источники",
+          "2-Солнечная система",
+          "3-Космические фоны",
+          "4-Космология",
+          "5-Механизмы излучения",
+          "6-Экзопланеты",
+          "7-Темное небо",
+          "8-Мульти-мессенджерная астрономия"
+        ]
+      },
+      Arabic: { 
+         chapters: "☰ الفصول", 
+         donate: "تبرع", 
+         chapterNames: [
+          " المقدمة",
+            "1-المصادر الفلكية","2-النظام الشمسي","3-الخلفيات الكونية","4-علم الكون","5-آليات الانبعاث","6-الكواكب الخارجية","7-السماء المظلمة","8-علم الفلك متعدد الرسل"] },
+      Armenian: { 
+         chapters: "☰ Գլուխներ", 
+         donate: "Նվիրաբերել", 
+         chapterNames: [
+            " -Նախաբանի",
+            "1-Աստղագիտական աղբյուրներ",
+            "2-Արևային համակարգ",
+            "3-Տիեզերական ֆոն",
+            "4-Տիեզերագիտություն",
+            "5-Ճառագայթման մեխանիզմներ",
+            "6-Էկզոմոլորակներ",
+            "7-Մութ երկինք",
+            "8-Բազմասուրհանդես աստղագիտություն"
+        ] 
+      }
+    };
+
+    function updateChapterLabels() {
+      const t = translations[selectedLanguage] || translations.English;
+      document.getElementById("custom-logo0").innerHTML = `<span>${t.chapters}</span>`;
+      const ids = ["custom-logo1", "custom-logo2", "custom-logo3", "custom-logo4", "custom-logo5", "custom-logo6", "custom-logo7", "custom-logo8", "custom-logo9"];
+      ids.forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = `<span>${t.chapterNames[i]}</span>`;
+      });
+      document.getElementById("custom-Donate").textContent = t.donate;
+    }
+
+    window.onload = () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const lang = urlParams.get('lang') || 'English';
+      selectLanguage(lang);
+      document.getElementById("bg-cell").style.backgroundImage = `url(${ROOT_URL}/logo/FirmamentoSky-logo.png)`;
+    };
+</script>
+</HTML>
